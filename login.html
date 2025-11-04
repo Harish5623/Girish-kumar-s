@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Farmers Marketplace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="login-section">
+    <h2>👤 Welcome to Farmers Marketplace</h2>
+    <form id="loginForm">
+      <input type="text" id="userName" placeholder="Your Name" required />
+      <input type="email" id="userEmail" placeholder="Your Gmail" required />
+      <input type="text" id="userAddress" placeholder="Your Address" required />
+      <button type="submit">Enter Marketplace</button>
+    </form>
+  </section>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Save user info to localStorage
+      localStorage.setItem('userName', document.getElementById('userName').value);
+      localStorage.setItem('userEmail', document.getElementById('userEmail').value);
+      localStorage.setItem('userAddress', document.getElementById('userAddress').value);
+
+      // Redirect to main page
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
+
